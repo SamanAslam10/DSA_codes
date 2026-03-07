@@ -44,7 +44,7 @@ void CountNodes(struct Node *Head)
     next = Head;
     while(next != NULL)
     {
-    next = next +1 ;
+    next = next-> link;
     count = count + 1;
     }
     printf("%d",count);
