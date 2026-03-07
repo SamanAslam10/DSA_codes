@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+// array isn't full
 int AddAtEnd(int data , int arr[], int free);
 int main()
 {
