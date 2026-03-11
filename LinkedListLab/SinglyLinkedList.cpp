@@ -231,5 +231,40 @@ int main() {
     list.deleteAtPosition(2); 
     cout << "After deleting position 2: "; 
     list.display(); 
+
+
+
+    // Practice Variations
+
+    cout<<"Practice Variation Outputs"<<endl;
+    list.addAtEnd(100); 
+    list.addAtEnd(200); 
+    list.addAtEnd(300); 
+    cout << "Initial List: "; 
+    list.display(); 
+    list.addAtStart(57); 
+    cout << "After adding at start: "; 
+    list.display(); 
+    list.addAtPosition(10, 4); 
+    cout << "After adding 10 at position 4: "; 
+    list.display(); 
+    list.updateFirstNode(67); 
+    cout << "After updating first node: "; 
+    list.display(); 
+    list.updateLastNode(390); 
+    cout << "After updating last node: "; 
+    list.display(); 
+    list.updateAtPosition(200, 5); 
+    cout << "After updating position 5: "; 
+    list.display(); 
+    list.deleteFirstNode(); 
+    cout << "After deleting first node: "; 
+    list.display(); 
+    list.deleteLastNode(); 
+    cout << "After deleting last node: "; 
+    list.display(); 
+    list.deleteAtPosition(3); 
+    cout << "After deleting position 3: "; 
+    list.display(); 
     return 0; 
 } 
