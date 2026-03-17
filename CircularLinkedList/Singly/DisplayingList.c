@@ -8,6 +8,7 @@ struct Node
 };
 struct Node* Create(int arr[] , int n);
 void Display(struct Node *head);
+void RecursionDisplay(struct Node *p,struct Node *head);
 int main()
 {
     int n = 5;
@@ -15,6 +16,8 @@ int main()
 
     struct Node *Head = Create(array , n);
     Display(Head);
+    struct Node *p = Head;
+    RecursionDisplay( p , Head);
 }
 struct Node* Create(int arr[] , int n)
 {
@@ -44,4 +47,15 @@ void Display(struct Node *head)
         ptr = ptr -> next;
     }
     while(ptr != head);
+}
+void RecursionDisplay(struct Node *p , struct Node *head)
+{
+    static int flag = 0;
+    if(p != head || flag == 0 )
+    {
+        flag = 1;
+        printf("%d,%s" , p->data , " ");
+        RecursionDisplay(p->next , head);
+    }
+    flag = 0;
 }
