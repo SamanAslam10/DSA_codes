@@ -13,4 +13,12 @@ int main()
     Head -> data = 10;
     Head -> next = Head;
     Head -> prev = Head;
+
+    struct Node *Current = (struct Node*)malloc(sizeof(struct Node));
+    Current -> data = 20;
+    Current -> next = Head;
+    Current -> prev = Head;
+
+    Head -> prev = Current;
+    Head -> next = Current;
 }
