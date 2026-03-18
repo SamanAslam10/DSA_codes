@@ -33,4 +33,14 @@ void Display(struct Node *tail)
         ptr = ptr -> data;
     }
 }
+struct Node* InsertAtEnd(struct Node *tail , int data)
+{
+    struct Node *ptr = (struct Node*)malloc(sizeof(struct Node));
+    ptr -> data = data;
+    ptr -> next = tail -> next;
+    tail -> next = ptr;
+
+    tail = ptr;
+    return tail;
+}
 int main(){}
