@@ -27,11 +27,11 @@ struct Node* Create(int arr[],int n)
 void Display(struct Node *tail)
 {
     struct Node *ptr = tail;
-    while(ptr -> next != tail)
+    do
     {
-        printf("%d,%s" , ptr ->next-> data ," ");
+        printf("%d,%s" , ptr->next-> data ," ");
         ptr = ptr -> next;
-    }
+    }while(ptr!= tail);
 }
 struct Node* InsertAtEnd(struct Node *tail , int data)
 {
@@ -51,6 +51,6 @@ int main()
     struct Node *tail = Create(array , n);
     Display(tail);
     printf("\n");
-    InsertAtEnd(tail,60);
+    tail = InsertAtEnd(tail,60);
     Display(tail);
 }
