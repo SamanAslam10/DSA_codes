@@ -9,15 +9,17 @@ struct Node
 struct Node* Create(int arr[] , int n);
 void Display(struct Node *head);
 void RecursionDisplay(struct Node *p,struct Node *head);
+struct Node* InsertAtBegining(struct Node *head , int data);
 int main()
 {
     int n = 5;
     int array[] = {1,2,3,4,5};
 
     struct Node *Head = Create(array , n);
+
+    Head = InsertAtBegining(Head , 55);
+    Head = InsertAtBegining(Head , 23);
     Display(Head);
-    struct Node *p = Head;
-    RecursionDisplay( p , Head);
 }
 struct Node* Create(int arr[] , int n)
 {
@@ -47,4 +49,22 @@ void Display(struct Node *head)
         ptr = ptr -> next;
     }
     while(ptr != head);
+}
+struct Node* InsertAtBegining(struct Node *head , int data)
+{
+    struct Node *ptr = (struct Node*)malloc(sizeof(struct Node));
+    ptr -> data = data;
+
+    struct Node *temp = head;
+
+
+    while(temp-> next != head)
+    {
+        temp = temp -> next;
+    }
+    temp -> next = ptr;
+    ptr -> next = head;
+    head = ptr;
+
+    return head;
 }
