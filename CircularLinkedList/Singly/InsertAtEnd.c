@@ -29,8 +29,8 @@ void Display(struct Node *tail)
     struct Node *ptr = tail;
     while(ptr -> next != tail)
     {
-        printf("%d,%s" , ptr -> data ," ");
-        ptr = ptr -> data;
+        printf("%d,%s" , ptr ->next-> data ," ");
+        ptr = ptr -> next;
     }
 }
 struct Node* InsertAtEnd(struct Node *tail , int data)
@@ -43,4 +43,14 @@ struct Node* InsertAtEnd(struct Node *tail , int data)
     tail = ptr;
     return tail;
 }
-int main(){}
+int main()
+{
+    int array[] = {10,20,30,40,50};
+    int n = 5;
+
+    struct Node *tail = Create(array , n);
+    Display(tail);
+    printf("\n");
+    InsertAtEnd(tail,60);
+    Display(tail);
+}
