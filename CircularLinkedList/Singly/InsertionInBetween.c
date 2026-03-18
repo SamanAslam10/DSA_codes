@@ -33,7 +33,23 @@ void Display(struct Node *tail)
         ptr = ptr -> next;
     }while(ptr!= tail);
 }
+struct Node* InsertInBetween(struct Node *tail , int data , int position)
+{
+    struct Node *ptr = (struct Node*)malloc(sizeof(struct Node));
+    ptr -> data = data;
+    ptr -> next = NULL;
 
+    struct Node *temp = tail -> next;
+    while(position != 1)
+    {
+        temp = temp -> next;
+        position --;
+    }
+    ptr -> next = temp -> next;
+    temp -> next = ptr;
+
+    return tail;
+}
 int main()
 {
     int array[] = {10,20,30,40,50};
@@ -42,5 +58,6 @@ int main()
     struct Node *tail = Create(array , n);
     Display(tail);
     printf("\n");
-    
+    tail = InsertInBetween(tail , 55 , 4);
+    Display(tail);
 }
