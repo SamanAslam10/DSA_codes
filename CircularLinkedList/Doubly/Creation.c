@@ -14,19 +14,27 @@ struct Node* Create(int arr[],int n)
     head -> data = arr[0];
     head -> prev = head;
     head -> next = head;
+
+    temp = head;
+
+    for(int i = 1; i < n ; i ++)
+    {
+        ptr = (struct Node*)malloc(sizeof(struct Node));
+        ptr -> data = arr[i];
+        ptr -> next = head;
+        ptr -> prev = temp;
+
+        temp -> next = ptr;
+        temp = ptr;
+    }
+    return temp;
 }
 int main()
 {
-    struct Node *Head =(struct Node*)malloc(sizeof(struct Node));
-    Head -> data = 10;
-    Head -> next = Head;
-    Head -> prev = Head;
+    int arr[] = {1,2,3,4,5,6};
+    int n = 6;
 
-    struct Node *Current = (struct Node*)malloc(sizeof(struct Node));
-    Current -> data = 20;
-    Current -> next = Head;
-    Current -> prev = Head;
+    struct Node* tail = Create(arr,n);
 
-    Head -> prev = Current;
-    Head -> next = Current;
+    return 0;
 }
