@@ -7,6 +7,14 @@ struct Node
     struct Node *next;
     struct Node *prev;
 };
+struct Node* Create(int arr[],int n)
+{
+    struct Node *ptr , *temp , *head;
+    head = (struct Node*)malloc(sizeof(struct Node));
+    head -> data = arr[0];
+    head -> prev = head;
+    head -> next = head;
+}
 int main()
 {
     struct Node *Head =(struct Node*)malloc(sizeof(struct Node));
