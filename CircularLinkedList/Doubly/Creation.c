@@ -29,12 +29,22 @@ struct Node* Create(int arr[],int n)
     }
     return temp;
 }
+void Display(struct Node *tail)
+{
+    struct Node *ptr = tail;
+    do
+    {
+        printf("%d,%s" , ptr -> data , " ");
+        ptr = ptr -> next;
+    }
+    while(ptr != tail);
+}
 int main()
 {
     int arr[] = {1,2,3,4,5,6};
     int n = 6;
 
     struct Node* tail = Create(arr,n);
-
+    Display(tail);
     return 0;
 }
