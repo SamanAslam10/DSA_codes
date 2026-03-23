@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    stack<char> stack;
+    stack<char> s;
     string st;
 
     cout<<"Enter the string: ";
@@ -13,14 +13,14 @@ int main()
     
     for(char c : st)
     {
-        stack.push(c);
+        s.push(c);
     }
 
     cout<<"reversed string : ";
-    while(!stack.empty())
+    while(!s.empty())
     {
-        cout<<stack.top();
-        stack.pop();
+        cout<<s.top();
+        s.pop();
     }
     return 0;
 }
