@@ -1,10 +1,7 @@
 #include <iostream>
 #include <stack>
-
 using namespace std;
-
 stack<char> s;
-
 bool ParanthesisBalance(string equation)
 {
     for(char c : equation)
@@ -47,7 +44,5 @@ int main()
     {
         cout<<"The paranthesis is not balanced!";
     }
-    
-    
     return 0;
 }
