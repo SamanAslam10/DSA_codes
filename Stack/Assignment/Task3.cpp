@@ -20,6 +20,7 @@ int PrecedenceCheck(char c)
     {
         return 1;
     }
+    return 0;
 }
 int main()
 {
@@ -39,26 +40,26 @@ int main()
         {
             cout<<c;
         }
-        else if(c == ')')
+        else if(!s.empty() && c == ')')
         {
             do
             {
                 cout<<s.top();
                 s.pop();
             }while(s.top() != '(');
+            if(s.top() == '(')
+            {
+                s.pop();
+            }
         }
         else
         {
-            if(c != '(' && c != ')' && PrecedenceCheck(s.top()) < PrecedenceCheck(c) )
-            {
-                s.push(c);
-            }
-            else if(c != '(' && c != ')' && PrecedenceCheck(s.top()) >= PrecedenceCheck(c))
+            while(!s.empty() && s.top() != '('&& PrecedenceCheck(s.top()) >= PrecedenceCheck(c))
             {
                 cout<<s.top();
                 s.pop();
-                s.push(c);
             }
+            s.push(c);
         }
 
     }
