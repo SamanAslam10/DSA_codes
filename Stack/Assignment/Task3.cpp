@@ -31,9 +31,9 @@ int main()
 
     for(char c : infix)
     {
-        if(s.empty())
+        if(c == '(')
         {
-            s.push('(');
+            s.push(c);
         }
         else if(c != '+' && c != '-' && c != '*' && c != '/' && c != '^' && c != '(' && c != ')')
         {
@@ -49,11 +49,11 @@ int main()
         }
         else
         {
-            if(c != '(' || c != ')' || PrecedenceCheck(s.top()) < PrecedenceCheck(c) )
+            if(c != '(' && c != ')' && PrecedenceCheck(s.top()) < PrecedenceCheck(c) )
             {
                 s.push(c);
             }
-            else if(c != '(' || c != ')' || PrecedenceCheck(s.top()) >= PrecedenceCheck(c))
+            else if(c != '(' && c != ')' && PrecedenceCheck(s.top()) >= PrecedenceCheck(c))
             {
                 cout<<s.top();
                 s.pop();
@@ -61,6 +61,11 @@ int main()
             }
         }
 
+    }
+    while(!s.empty())
+    {
+        cout<<s.top();
+        s.pop();
     }
     return 0;
 }
