@@ -6,19 +6,19 @@ int PrecedenceCheck(char c)
 {
     if(c == '(' || c == ')')
     {
-        return 1;
+        return 4;
     }
     else if(c == '^')
     {
-        return 2;
+        return 3;
     }
     else if(c == '*' || c == '/')
     {
-        return 3;
+        return 2;
     }
     else if(c == '+' || c == '-')
     {
-        return 4;
+        return 1;
     }
 }
 int main()
