@@ -18,6 +18,11 @@ void Create(int data)
 }
 void EnQueue(int data)
 {
+    if(IsEmpty() == 1)
+    {
+        Create(data);
+        return;
+    }   
     struct Node* ptr = (struct Node*)malloc(sizeof(struct Node));
     ptr -> data = data;
     ptr -> next = NULL;
@@ -27,6 +32,10 @@ void EnQueue(int data)
 }
 void DeQueue()
 {
+    if(IsEmpty() == 1)
+    {
+        return;
+    } 
     struct Node* ptr = front;
     front = front -> next;
     free(ptr);
