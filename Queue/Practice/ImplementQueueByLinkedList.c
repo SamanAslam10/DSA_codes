@@ -40,7 +40,6 @@ int IsEmpty()
 {
     if(front == NULL && rear == NULL)
     {
-        printf("%s" , "The queue is empty!");
         return 1;
     }
     return 0;
@@ -53,6 +52,8 @@ int IsFull()
         printf("%s" , "The queue is full!");
         return 1;
     }
+    free(ptr);
+    ptr = NULL;
     return 0;
 }
 void Display()
