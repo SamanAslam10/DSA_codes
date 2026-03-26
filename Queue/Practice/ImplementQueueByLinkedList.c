@@ -7,26 +7,17 @@ struct Node
     struct Node *next;
 }*front = NULL,*rear = NULL;
 
-void Create(int data)
-{
-    struct Node* ptr = (struct Node*)malloc(sizeof(struct Node));
-    ptr -> data = data;
-    ptr -> next = NULL;
-
-    front = ptr;
-    rear = ptr;
-}
 void EnQueue(int data)
 {
-    if(IsEmpty() == 1)
-    {
-        Create(data);
-        return;
-    }   
     struct Node* ptr = (struct Node*)malloc(sizeof(struct Node));
     ptr -> data = data;
     ptr -> next = NULL;
-
+    if(IsEmpty() == 1)
+    {
+        front = ptr;
+        rear = ptr;
+        return;
+    }   
     rear -> next = ptr;
     rear = ptr;
 }
@@ -38,6 +29,10 @@ void DeQueue()
     } 
     struct Node* ptr = front;
     front = front -> next;
+    if(front == NULL)
+    {
+        rear = NULL;
+    }
     free(ptr);
     ptr = NULL;
 }
@@ -72,7 +67,6 @@ void Display()
 }
 int main()
 {
-    Create(10);
     EnQueue(40);
     EnQueue(30);
     EnQueue(80);
