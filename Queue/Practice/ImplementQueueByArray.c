@@ -76,6 +76,9 @@ void Display(struct Queue *q)
 }
 int main()
 {
+
+
+    
     struct Queue q;
  
     Create(&q,6);
