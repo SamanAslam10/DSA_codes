@@ -1,13 +1,10 @@
 #include <iostream>
-
 using namespace std;
-
 struct Node
 {
     int data;
     struct Node *next;
 }*front = NULL, *rear = NULL;
-
 bool IsEmpty()
 {
     return front == NULL;
@@ -73,11 +70,8 @@ int main()
 {
     EnQueue(10);
     EnQueue(20);
-
     Display();
-
     DeQueue();
-
     Display();
     return 0;
 }
