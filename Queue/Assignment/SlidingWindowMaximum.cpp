@@ -3,8 +3,12 @@
 
 using namespace std;
 
-void SlidingWindowMaximum(int i ,int arr[] , int k)
+void SlidingWindowMaximum(int i ,int n,int arr[] , int k)
 {
+    if(i > n-k)
+    {
+        return;
+    }
     queue<int> q;
 
     for(i; i < k ; i ++ )
@@ -12,6 +16,8 @@ void SlidingWindowMaximum(int i ,int arr[] , int k)
         q.push(arr[i]);
     }
     int max =0;
+    if(!q.empty())
+    {
         max = q.front();
         q.pop();
         for(int i = 0; i < k ; i ++ )
@@ -22,8 +28,9 @@ void SlidingWindowMaximum(int i ,int arr[] , int k)
             }
             q.pop();
         }
+    }
     cout<<max<<" ";
-    SlidingWindowMaximum(i+1,arr , k+1);
+    SlidingWindowMaximum(i+1,n,arr , k+1);
 }
 int main()
 {
@@ -42,7 +49,7 @@ int main()
     cout<<"Enter the value of k : ";
     cin>>k;
 
-    SlidingWindowMaximum(0,arrInput , k);
+    SlidingWindowMaximum(0,n,arrInput , k);
 
     return 0;
 }
