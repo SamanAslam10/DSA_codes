@@ -11,19 +11,19 @@ void SlidingWindowMaximum(int i ,int arr[] , int k)
     {
         q.push(arr[i]);
     }
-    int max = q.front();
-    q.pop();
-    for(int i = 0; i < k ; i ++ )
-    {
-        if(max < q.front() )
-        {
-            max = q.front();
-        }
+    int max =0;
+        max = q.front();
         q.pop();
-    }
+        for(int i = 0; i < k ; i ++ )
+        {
+            if(max < q.front() )
+            {
+                max = q.front();
+            }
+            q.pop();
+        }
     cout<<max<<" ";
-    i ++;
-    SlidingWindowMaximum(i,arr , k);
+    SlidingWindowMaximum(i+1,arr , k+1);
 }
 int main()
 {
