@@ -1,30 +1,13 @@
 #include <iostream>
-
 using namespace std;
-
 struct Node
 {
     int data;
     struct Node *next;
 }*front = NULL, *rear = NULL;
-
-bool IsFull()
-{
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
-    if(ptr == NULL)
-    {
-        return true;
-    }
-    free(ptr);
-    return false;
-}
 bool IsEmpty()
 {
-    if(front == rear)
-    {
-        return true;
-    }
-    return false;
+    return front == NULL;
 }
 int First()
 {
