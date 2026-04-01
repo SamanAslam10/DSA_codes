@@ -40,12 +40,21 @@ void NextJob()
 }
 int main()
 {
+    
     PrintJob job1 = PrintJob();
     job1.id = 1;
     job1.filname = "DSA_quiz";
     job1.pages = 2;
 
+    PrintJob job2 = PrintJob();
+    job2.id = 2;
+    job2.filname = "FinalExam";
+    job2.pages = 100;
+
     AddJob(job1);
-    NextJob();
+    AddJob(job2);
     ProcessJob();
+    NextJob();
+
+    return 0;
 }
