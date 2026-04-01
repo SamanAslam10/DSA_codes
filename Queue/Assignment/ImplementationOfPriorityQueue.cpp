@@ -1,8 +1,6 @@
 #include <iostream>
 #include <queue>
-
 using namespace std;
-
 queue<char> Q1,Q2,Q3;
 void Enqueue(int priority , char value)
 {
