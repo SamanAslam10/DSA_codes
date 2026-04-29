@@ -6,7 +6,6 @@ using namespace std;
 struct Node
 {
     int data;
-    
     vector<Node*> childern;
 
     Node(int value)
@@ -15,19 +14,45 @@ struct Node
     }
 };
 
-void PrintTree(Node* root)
+int CountLeftNodes(Node* root)
 {
     if(root == NULL)
     {
-        return;
+        return 0;
     }
 
-    cout<<root->data<<" ";
+    int count = 0;
+    if(!root->childern.empty())
+    {
+        count += 1;
+    }
 
     for(Node* child : root->childern)
     {
-        PrintTree(child);
+        count += CountLeftNodes(child);
     }
+    
+    return count;
+}
+int CountRightNodes(Node* root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+
+    int count = 0;
+    if(!root->childern.empty())
+    {
+        count += 1;
+    }
+
+    for(Node* child : root->childern)
+    {
+        count += CountRightNodes(child);
+    }
+    
+    return count;
 }
 int main()
 {
@@ -46,8 +71,7 @@ int main()
     c1->childern.push_back(c5);
     c3->childern.push_back(c6);
 
-    cout<<"Printing Nodes: ";
-    PrintTree(root);
-
+    cout<<"Number of Left Nodes: "<<CountLeftNodes(root)<<endl;
+    cout<<"Number of Right Nodes: "<<CountRightNodes(root);
     return 0;
 }
