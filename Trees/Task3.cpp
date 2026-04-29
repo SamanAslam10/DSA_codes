@@ -14,20 +14,6 @@ struct Node
     }
 };
 
-void PrintTree(Node* root)
-{
-    if(root == NULL)
-    {
-        return;
-    }
-
-    cout<<root->data<<" ";
-
-    for(Node* child : root->childern)
-    {
-        PrintTree(child);
-    }
-}
 int CountNodes(Node* root)
 {
     if(root == NULL)
