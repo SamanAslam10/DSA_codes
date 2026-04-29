@@ -20,14 +20,26 @@ int main()
     {
         cout<<"Node : "<<Tree[i]<<endl;
 
-        int leftchild =0;
-        int rightchild =0;
+        int leftchild =2*i + 1;
+        int rightchild = 2*i + 2;
 
-        leftchild =2*i + 1;
-        rightchild = 2*i + 2;
+        if(leftchild > n)
+        {
+            cout<<"Left: NULL"<<endl;
+        }
+        else
+        {
+            cout<<"Left: "<<Tree[leftchild]<<endl;
+        }
 
-        cout<<"Left: "<<Tree[leftchild]<<endl;
-        cout<<"right: "<<Tree[rightchild]<<endl;
+        if(rightchild > n)
+        {
+            cout<<"right: NULL"<<endl;
+        }
+        else
+        {
+            cout<<"right: "<<Tree[rightchild]<<endl;
+        }
 
         cout<<endl;
     }
