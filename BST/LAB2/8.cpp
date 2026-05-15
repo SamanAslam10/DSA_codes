@@ -32,26 +32,17 @@ Node* Insert(Node* root, int value)
     }
     return root;
 }
-
-Node* Search(Node* root , int value)
+bool IdenticalBST(Node* r1 , Node* r2)
 {
-
-    if(root == NULL)
+    if(r1 == NULL || r2 == NULL)
     {
-        return NULL;
+        return false;
     }
-    if(root->data == value)
+    if(r1->data == r2->data )
     {
-        return root;
+        return true;
     }
-    else if(root->data > value)
-    {
-        return Search(root->left,value);
-    }
-    else
-    {
-        return Search(root->right,value);
-    }
+    return IdenticalBST(r1->left,r2->left) && IdenticalBST(r2->left,r2->right); 
 }
 int main()
 {
@@ -60,24 +51,20 @@ int main()
     Insert(root,25);
     Insert(root,65);
     Insert(root,15);
-    Insert(root,35);
-    Insert(root,55);
-    Insert(root,75);
 
-    int value;
-    cout<<"Enter the value u want to search: ";
-    cin>>value;
+    Node* root2 = NULL;
+    root2 = new Node(45);
+    Insert(root2,25);
+    Insert(root2,65);
+    Insert(root2,15);
 
-    Node* result = Search(root, value);
-
-    if (result != NULL)
+    if(IdenticalBST(root,root2))
     {
-        cout << "Value " << result->data << " found!";
+        cout<<"Identical";
     }
-    else 
+    else
     {
-        cout << "Value not found.";
+        cout<<"Not Identical";
     }
-
     return 0;
 }
