@@ -71,7 +71,7 @@ int main()
     Insert(root,55);
     Insert(root,75);
 
-    Node* lca = LCA(root,25,65);
+    Node* lca = LCA(root,15,35);
     cout<<lca->data;
     return 0;
 }
