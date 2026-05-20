@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+void BubbleSort(int A[] , int n)
+{
+    for(int i = 0 ; i < n ; i ++)
+    {
+        for(int j = 0 ; j < n-1-i ; j ++)
+        {
+            if(A[j] > A[j+1])
+            {
+                int temp = A[j];
+                A[j] = A[j+1];
+                A[j+1] = temp;
+            }
+        }
+    }
+}
+void Print(int A[] , int n )
+{
+    for(int j = 0 ; j < n ; j ++)
+    {
+        cout<<A[j]<<" ";
+    }
+    cout<<endl;
+}
+int main()
+{
+    int n = 5;
+    int A[n] ={5,1,4,2,8};
+    
+    Print(A,n);
+    BubbleSort(A,n);
+    Print(A,n);
+    return 0;
+}
