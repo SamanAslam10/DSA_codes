@@ -84,7 +84,7 @@ Node* RLRotation(Node* ptr)
     ptrR->height = Height(ptrR);
     ptrRL->height = Height(ptrRL);
 
-    if(root == ptrRL)
+    if(root == ptr)
     {
         root = ptrRL;
     }
@@ -105,7 +105,7 @@ Node* LRRotation(Node* ptr)
     ptrL->height = Height(ptrL);
     ptrLR->height = Height(ptrLR);
 
-    if(root == ptrLR)
+    if(root == ptr)
     {
         root = ptrLR;
     }

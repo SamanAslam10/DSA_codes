@@ -27,7 +27,7 @@ void InsertionSort(int A[] , int n)
         }
         A[j+1] = x;
     }
-    cout<<comp<<" "<<swap;
+    cout<<"Comparisons: "<<comp<<endl<<" Swaps: "<<swap;
 }
 int main()
 {
